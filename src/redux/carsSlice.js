@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars } from "./operations";
 
 const initialState = {
-  cars: [],
+  validCars: [],
   isLoading: false,
   error: null,
 };
@@ -23,7 +23,7 @@ const carsSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.cars = action.payload;
+        state.validCars = action.payload;
       });
     //   .addCase(addContact.pending, (state) => {
     //     state.isLoading = true;

@@ -16,20 +16,14 @@ export default function Catalog() {
     dispatch(fetchCars());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <div>Loading...</div>; // You can replace this with a loading indicator or message
-  }
-
-  if (!Array.isArray(allCars)) {
-    return <div>Error: Invalid data</div>; // Adjust this based on your error handling logic
-  }
-
   console.log(allCars);
   return (
     <div>
-      {allCars.map((carItem) => (
-        <CarItem key={carItem.id} car={carItem} />
-      ))}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        allCars.map((carItem) => <CarItem key={carItem.id} car={carItem} />)
+      )}
     </div>
   );
 }
