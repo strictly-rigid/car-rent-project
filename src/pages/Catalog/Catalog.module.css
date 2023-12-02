@@ -9,3 +9,10 @@
 .catalogItem {
   flex-basis: 274px;
 }
+
+.btnLoadMore {
+  background-color: white;
+  border: none;
+  color: #3470ff;
+  text-decoration: underline;
+}

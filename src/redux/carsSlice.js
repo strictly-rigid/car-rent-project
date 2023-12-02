@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars } from "./operations";
 
-const initialState = {
+export const initialState = {
   validCars: [],
   isLoading: false,
   error: null,
+  currentPage: 1,
+  perPage: 12,
 };
 
 const carsSlice = createSlice({
@@ -24,6 +26,7 @@ const carsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.validCars = action.payload;
+        state.currentPage += 1;
       });
     //   .addCase(addContact.pending, (state) => {
     //     state.isLoading = true;
