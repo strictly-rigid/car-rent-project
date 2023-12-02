@@ -69,29 +69,40 @@ export default function ModalWindow({ carItemModal, isOpenModalToggle }) {
           </button>
           <img src={img} alt="car" width="461px" height="248px"></img>
           <div className={css.firstRowCard}>
-            {make} {model}, {year}
+            {make} <span className={css.spanText}>{model}</span>, {year}
           </div>
           <div className={css.secondRowCard}>
+            {address} | {id} | {year} | {type}
+          </div>
+          <div className={css.thirdRowCard}>
             Fuel Consumption: {fuelConsumption} | Engine Size: {engineSize}
           </div>
-          <p>{description}</p>
-          <p>Accessories and functionalities:</p>
-          <div>
-            <p>{accessories.map((item) => ` ${item} | `)}</p>
+          <p className={css.description}>{description}</p>
+          <p className={css.accessoriesDescription}>
+            Accessories and functionalities:
+          </p>
+          <div className={css.fourthRowCard}>
+            {accessories.map((item) => ` ${item} | `)}
           </div>
-          <div>
-            <p>{functionalities.map((item) => ` ${item} | `)}</p>
+          <div className={css.fifthRowCard}>
+            {functionalities.map((item) => ` ${item} | `)}
           </div>
-          <p>Rental Conditions:</p>
-          <div className={css.rentalConditions}>
+          <p className={css.accessoriesDescription}>Rental Conditions:</p>
+          <div className={css.rentalConditionsContainer}>
             {conditionsArr.map((item) => (
-              <p className={css.condition}>{item}</p>
+              <div className={css.condition}>{item}</div>
             ))}
-            <p className={css.condition}>Mileage: {mileage}</p>
-            <p className={css.condition}>Price: {rentalPrice}</p>
+            <div className={css.condition}>
+              Mileage: <span className={css.spanText}> {mileage}</span>
+            </div>
+            <div className={css.condition}>
+              Price: <span className={css.spanText}> {rentalPrice}</span>
+            </div>
           </div>
           <button type="button" className={css.rentalCarBtn}>
-            Rental car
+            <a href="tel:+380730000000" className={css.rentalCarLink}>
+              Rental car
+            </a>
           </button>
         </div>
       </div>

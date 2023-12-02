@@ -1,25 +1,84 @@
 .modalContainer {
   position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(04, 04, 04, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modalWindow {
-  position: relative;
-  width: 541px;
-  height: 752px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 24px;
-  /* border: 1px solid rgba(239, 237, 232, 0.2); */
-  background: #ffffff;
-  position: absolute;
+  width: 541px;
+  /* height: 752px; */
+  /* margin-top: 150px; */
+  /* margin-bottom: 150px; */
+}
+
+.itemContainer {
+  padding: 40px;
+}
+
+.firstRowCard {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: medium;
+}
+
+.spanText {
+  color: #3470ff;
+  font-weight: 600;
+}
+
+.secondRowCard {
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.thirdRowCard {
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.description {
+  color: #121417;
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.accessoriesDescription {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.fourthRowCard {
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.fifthRowCard {
+  color: rgba(18, 20, 23, 0.5);
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .btnModalClose {
@@ -33,7 +92,7 @@
   right: 16px;
 }
 
-.rentalConditions {
+.rentalConditionsContainer {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -42,14 +101,26 @@
 .condition {
   margin-top: 8px;
   margin-bottom: 0;
+  background-color: #f9f9f9;
+  color: #363535;
+  /* height: 32px; */
+  padding: 7px 14px;
+  border-radius: 35px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .rentalCarBtn {
   width: 168px;
   height: 44px;
   border-radius: 12px;
+  margin-top: 24px;
   font-size: 14px;
   line-height: 20px;
-  color: white;
   background-color: #3470ff;
+}
+
+.rentalCarLink {
+  color: white;
+  text-decoration: none;
 }
