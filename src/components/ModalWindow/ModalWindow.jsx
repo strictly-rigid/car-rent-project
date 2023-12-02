@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import css from "./ModalWindow.module.css";
 // import closeBtn from "../../images/closeBtn.png";
@@ -93,7 +94,10 @@ export default function ModalWindow({ carItemModal, isOpenModalToggle }) {
               <div className={css.condition}>{item}</div>
             ))}
             <div className={css.condition}>
-              Mileage: <span className={css.spanText}> {mileage}</span>
+              Mileage:{" "}
+              <span className={css.spanText}>
+                {mileage.toString().replace(/^(\d)(\d*)$/, "$1,$2")}
+              </span>
             </div>
             <div className={css.condition}>
               Price: <span className={css.spanText}> {rentalPrice}</span>
@@ -109,3 +113,25 @@ export default function ModalWindow({ carItemModal, isOpenModalToggle }) {
     </div>
   );
 }
+
+ModalWindow.propTypes = {
+  carItemModal: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    make: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    rentalCompany: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+    fuelConsumption: PropTypes.string.isRequired,
+    engineSize: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    accessories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    rentalConditions: PropTypes.string.isRequired,
+    mileage: PropTypes.string.isRequired,
+  }).isRequired,
+  isOpenModalToggle: PropTypes.func.isRequired,
+};

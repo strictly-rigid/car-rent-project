@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 import css from "./CarItem.module.css";
 import ModalWindow from "../ModalWindow/ModalWindow";
@@ -74,3 +75,18 @@ export default function CarItem({ car }) {
     </div>
   );
 }
+
+CarItem.propTypes = {
+  car: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    make: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    rentalCompany: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
