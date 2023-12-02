@@ -16,3 +16,7 @@
   color: #3470ff;
   text-decoration: underline;
 }
+
+.dropdownContainer {
+  display: block;
+}
